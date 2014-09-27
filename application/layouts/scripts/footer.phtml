@@ -1,0 +1,44 @@
+
+
+<?php
+# Javascript
+        echo $this->headScript()    
+        
+                
+                ->appendFile('/assets/js/jquery-1.10.2.min.js', 'text/javascript')
+                ->appendFile('/assets/js/jquery.min.js', 'text/javascript')
+                ->appendFile('/assets/js/bootstrap.min.js', 'text/javascript')
+                ->appendFile('/assets/js/bootstrap-carousel.js', 'text/javascript')
+             
+                ->appendFile('/assets/js/vendor/jquery-1.11.0.min.js', 'text/javascript')
+                ->appendFile('/assets/js/vendor/bootstrap.min.js', 'text/javascript')
+                ->appendFile('/assets/js/plugins.js', 'text/javascript')
+                ->appendFile('/assets/js/main.js', 'text/javascript');
+        
+        echo $this->render('script.phtml');  
+        
+?>
+   
+            <footer>
+            	<div class="row" style="margin:3% 5% 0 6%;">
+                	<div class="col-lg-9 col-md-9 col-sm-9 pull-left">
+                    	<p style="color:#ff7300;">&copy; Copyright 2014 Globussoft, Inc. | Website Development & Hosting by <a href="home.html">Globussoft.com</a></p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 pull-right img-social">
+                        <a href="#"><span class="fa fa-google-plus-square fa-2x pull-right"></span></a>
+                        <a href="#"><span class="fa fa-twitter-square fa-2x pull-right"></span></a>
+                        <a href="#"><span class="fa fa-facebook-square fa-2x pull-right"></span></a><br><br>
+                    </div>
+                </div>
+            </footer>
+            
+        
+	</body>
+</html>
+
+    </body>
+</html>
+
+
+
+

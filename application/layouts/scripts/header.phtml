@@ -1,0 +1,151 @@
+<?php echo $this->doctype(); ?>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+        <?php
+        # Title
+        echo $this->headTitle();
+
+        # Meta data
+        echo $this->headMeta();
+        
+        # CSS
+        echo $this->headLink()
+                 ->appendStylesheet('/assets/css/bootstrap.css')
+                 ->appendStylesheet('/assets/css/stylesheet.css')
+                 ->appendStylesheet('/assets/css/font-awesome.css')
+                 ->appendStylesheet('/assets/css/font-awesome.min.css')
+                ->appendStylesheet('/assets/css/bootstrap.min.css')
+                ->appendStylesheet('/assets/css/bootstrap-theme.min.css')
+                ->appendStylesheet('/assets/css/main.css');
+        
+         echo $this->headScript()
+                ->appendFile('/assets/js/jquery-1.10.2.min.js', 'text/javascript')
+                ->appendFile('/assets/js/jquery.min.js', 'text/javascript')
+                ->appendFile('/assets/js/bootstrap.min.js', 'text/javascript')
+                ->appendFile('/assets/js/bootstrap-carousel.js', 'text/javascript')
+                ->appendFile('/assets/js/jquery.validate.min.js', 'text/javascript')
+                ->appendFile('/assets/js/validate.settings.js', 'text/javascript')
+        
+        
+        ?>
+       
+    
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+    <body>
+      
+    	<body style="background-color:#f0f0ee;">
+    	<div class="container" style="background-color:#FFF; margin-top:5%;">
+        	<nav class="navbar navbar-default" role="navigation">
+        		<div class="container-fixed">
+					<div class="navbar-header">
+                		<div align="left">
+                	  		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               	      			<span class="sr-only">Toggle navigation</span>
+               	      			<span class="icon-bar"></span>
+               	      			<span class="icon-bar"></span>
+               	      			<span class="icon-bar"></span>
+               	      		</button>
+              	  		</div>
+            		</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               			<div class="container">
+               				<div class="row">
+                				<div class="col-lg-4 col-md-4 col-sm-4" style="margin-top:5%;">
+                            		<div class="menu-tabs1">
+               							<ul class="nav navbar-nav navbar-left">
+               					  			<div class="account">
+                                      			<li class="account-text">
+                                          			<div align="right"><a data-toggle="modal" href="#myModal"> LogIn</a></div>
+                                          			<div id="myModal" class="modal fade">
+    													<div class="modal-dialog">
+        													<div class="modal-content">
+            													<div class="modal-header">
+                													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                													<h4 class="modal-title">LogIn</h4>
+            													</div>
+            													<div class="modal-body">
+                													<form class="form-group" role="form" action="#">
+                                          								<div class="col-sm-7">
+                                        									<input type="text" name="mailid" class="form-control" placeholder="E-Mail ID" /><br><br>
+                                  										</div>
+                                    									<div class="col-sm-7">
+                                    										<input type="password" name="passwd" class="form-control" placeholder="Password" /><br><br>
+                                    									</div>
+                                                            			<div class="col-sm-7">
+                                                            				<a href="forget.html"><label style="color:#000; float:left; cursor:pointer;">Forgot Password..??</label></a><br>
+                                                            			</div>
+                                                            			<div class="col-sm-7">
+                                                                			<a href="<?php echo $this->baseUrl('/signup'); ?>"><label style="color:#000; float:left; cursor:pointer;">Sign Up</label></a>
+                                                            			</div>  
+                           											</form>
+            													</div><br><br>
+            													<div class="modal-footer" style="margin-top: 10%;">
+                													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                													<button type="button" class="btn btn-primary">Sign In</button>
+            													</div>
+        													</div>
+    													</div>
+                                            		</div>
+                                      			</li>
+                                    		</div>
+                                                                    <div class="signup">
+                                                                        <li class="signup-text">
+                                                                            <div align="right"><a href="<?php echo $this->baseUrl('/signup'); ?>"> &nbsp;&nbsp; | &nbsp;&nbsp;Signup</a></div>
+                                                                        </li>
+                                                                    </div>
+                                                                   
+                                                                    
+
+                                                                </ul>
+                                        </div>
+                                                </div>
+                            	<div class="col-lg-8 col-md-8 col-sm-8" style="margin-left:-5%; margin-top:4%;">
+                					<div class="menu-tabs">
+                				  		<ul class="nav navbar-nav navbar-right">
+                				    		<li class="active"><a href="<?php echo $this->baseUrl('/'); ?>">HOME</a></li>
+                				    		<li class="dropdown">
+                                                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">BUY SERVICES</a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">BROWSE HOURLIES</a></li>
+                                                                         <li class="divider"></li>
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">POST JOBS</a></li>
+                                                                         <li class="divider"></li>
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">FIND FREELANCERS</a></li>
+                                                                        <li class="divider"></li>
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">DISCOVER SKILLS</a></li>
+                                                                    </ul>
+                                                                </li>   
+<!--                				    		<li><a href="sellservices.html">SELL SERVICES</a></li>-->
+                                                                <li class="dropdown">
+                                                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">SELL SERVICES</a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">BROWSE JOBS</a></li>
+                                                                         <li class="divider"></li>
+                                                                        <li><a role="menuitem" tabindex="-1" href="<?php echo $this->baseUrl('/posthourly');  ?>">POST HOURLIE </a></li>
+                                                                         <li class="divider"></li>
+                                                                        <li><a role="menuitem" tabindex="-1" href="#">PROMOTE YOURSELF</a></li>
+                                                                       
+                                                                    </ul>
+                                                                </li>   
+                				    		<li><a href="<?php echo $this->baseUrl('/postjobs'); ?>">POST A JOB</a></li>
+              				    		      </ul>
+              				  		</div>
+               					</div>
+                			</div>
+            			</div>
+        			</div>
+        		</div>
+                    
+                     
+    		</nav> 
+            
+            
+            <script>
+                $('.dropdown-toggle').dropdown()
+                </script>
+                

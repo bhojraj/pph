@@ -1,0 +1,123 @@
+<script>
+// $(document).ready(function(){
+//  $("#button").click(function(){
+//    alert("control passed");
+//  });
+//}); 
+$(document).ready(function(){
+  $(".signupform").validate({
+   rules: {
+               firstName: {
+                    required: true,
+                    regex: /^[a-zA-Z][a-zA-Z ]+$/,
+                    maxlength: 15
+                },
+                lastName: {
+                    required: true,
+                    regex: /^[a-zA-Z][a-zA-Z ]+$/,
+                    maxlength: 15
+                },
+//                  mail:  {
+//                      required: true,
+//                      remote: {
+//                        url: "/ajax-handler-auth",
+//                        type: post,
+//                         data: {
+//                              email: function() {
+//                                           return $( "#mail" ).val();
+//                                  },
+//                            ajaxMethod: 'validateEmail' 
+//                               }
+//                      },
+//                  },   
+                password: {
+                    required: true,
+                    minlength: 5,
+                    regex: /^[A-Za-z].*[0-9]|[0-9].*[A-Za-z]+$/,
+                    maxlength: 15
+                },
+//                
+            location: {
+                    required: true,
+                    regex: /^[a-zA-Z][a-zA-Z ]+$/,
+                    maxlength: 15
+               },
+             services: {
+                     required: true
+             }
+          },
+           messages: {
+                 
+                firstName: {
+                    required: "First Name is required",
+                    regex: "Please enter only alphabets",
+                    maxlength: "length of username should not exceed after 15 characters"
+                     },
+                     
+                lastName: {
+                    required: "Last Name is required",
+                    regex: "Please enter only alphabets",
+                    maxlength: "length of username should not exceed after 15 characters" 
+                     },
+//                     
+////                mail:  {
+////                    
+////                },
+//                     
+                password: {
+                    required: "Password is a required",
+                    minlength: "Minimum Length of password is 5",
+                    regex: "Password Must Contain At least one letter and one number",
+                    maxlength: "Maximum Length of Password is 15"
+                    },
+//                    
+                location: {
+                    required: "location is required",
+                    regex: "Please enter only alphabets",
+                    maxlength: "length of location should not exceed after 15 characters" 
+                },
+                 services: {
+                     required: "Service not selected"
+                 }
+           },
+  })
+});
+
+$(document.body).on('click','.continue',function(e){
+//    alert("control passed");
+       var jobTitle = document.forms["hourly"]["jobTitle"].value;
+       var phone = document.forms["hourly"]["phone"].value;
+       var currency = document.forms["hourly"]["currency"].value;
+       var rate = document.forms["hourly"]["rate"].value;
+       var profileImage = document.forms["hourly"]["profileImage"].value;
+       var aboutYou = document.forms["hourly"]["aboutYou"].value;
+       var portfolio = document.forms["hourly"]["portfolio"].value;
+        //alert(portfolio);
+        $.ajax({
+                url : '/member-application',
+                type : 'POST',
+                dataType : 'json',
+                data : {
+                    
+                    jobTitle : jobTitle,
+                    phone : phone,
+                    currency : currency,
+                    rate : rate ,
+                    profileImage : profileImage,
+                    aboutYou : aboutYou,
+                    portfolio : portfolio
+                }, 
+                 success:function(response){
+                     //alert("success");
+//                    $('#pd-slot').html('');
+//                    $('#pd-slot').html(response);
+                    //alert(response);
+                    
+                          
+                }
+                
+        });
+            
+        
+});
+    </script>
